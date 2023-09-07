@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+        height: auto;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Open the console to try out the functions</h1>
+    <ul style="list-style: none; display: flex; flex-direction: column">
+      <li>
+        <img src="./sum_to_n_a.png" alt="sum_to_n_a" /> use simple for loop to
+        add up to the n parameter
+      </li>
+      <li>
+        <img src="./sum_to_n_b.png" alt="sum_to_n_b" /> use mathematics formular
+        for caculating the sum of 1, 2, 3, ..., n
+      </li>
+      <li>
+        <img src="./sum_to_n_c.png" alt="sum_to_n_c" /> use the reduce()
+        function on an array with the length equal to the n parameter
+      </li>
+    </ul>
+    <script>
+      function sum_to_n_a(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+
+      function sum_to_n_b(n) {
+        return (n * (n + 1)) / 2;
+      }
+
+      function sum_to_n_c(n) {
+        return Array.from({ length: n }, (_, i) => i + 1).reduce(
+          (sum, num) => sum + num,
+          0
+        );
+      }
+    </script>
+  </body>
+</html>
